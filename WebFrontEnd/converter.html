@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/vert.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Hello Nature Converter</title>
+</head>
+
+<body>
+
+    <div id="verticalcalc" class="col-3 m-4">
+        <!-- <div class="row row-cols-auto"> -->
+
+        <div id="vlogo" class="col p-3">
+            <img src="assets\Eleven-Fifty-Logo.png" class=w-100>
+        </div>
+
+        <div id="calculator" class="col-12 py-3">
+            <h4>Convert</h4>
+            <form id="form" method="post">
+                <div class="p-3">
+                    <input type="text" id="value" placeholder="Value" />
+                </div>
+
+                <div class="row row-cols-auto pb-3">
+                    <div id="inputdropdown" class="col-3 py-1 ml-3">
+                        <label for="uom-dropdown"></label>
+                        <select id="uom-dropdown" name="uom-dropdown"> </select>
+                    </div>
+
+                    <div id="outputdropdown" class="col-3 py-1">
+                        <label for="output-dropdown"></label>
+                        <select id="output-dropdown" name="output-dropdown"> </select>
+                    </div>
+
+                    <div id="submitbutton" class="col-5 ml-3">
+                        <input type="submit" value="Calculate" />
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div id="results" class=row></div>
+
+            </form>
+        </div>
+
+        <!-- </div> -->
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+    <!-- <script type="text/javascript" src="second.js"></script> -->
+</body>
+</html>
