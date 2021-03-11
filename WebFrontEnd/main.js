@@ -1,6 +1,6 @@
-const url = 'https://dev.utilities.h-n.io/v1/options';
-var banana = [];
-var uniqueBanana = [];
+const url = 'https://m3s085lmsd.execute-api.us-west-2.amazonaws.com/development/v1/units';
+var payload = [];
+var uniquePayload = [];
 
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
@@ -78,25 +78,25 @@ fetch(url)
 
         for (var i = 0; i < obj.UnitsofMeasurement.length; i++){
             item = obj.UnitsofMeasurement[i].initialUOM;
-            banana.push(item);
+            payload.push(item);
         }
-        console.log(banana); // works
+        console.log(payload); // works
         console.log(obj.UnitsofMeasurement[0]);  // works
 
-        uniqueBanana = banana.filter(onlyUnique);
-        console.log(uniqueBanana);
-        
-        for (var i = 0; i < uniqueBanana.length; i++) {
-            option = document.createElement('option');
-            option.text = uniqueBanana[i].toUpperCase();
-            option.value = uniqueBanana[i];
+          uniquePayload = payload.filter(onlyUnique);
+          console.log(uniquePayload);
+
+          for (var i = 0; i < uniquePayload.length; i++) {
+              option = document.createElement('option');
+              option.text = uniquePayload[i].toUpperCase();
+              option.value = uniquePayload[i];
             dropdown.add(option);
         }
 
-        for (var i = 0; i < uniqueBanana.length; i++) {
+          for (var i = 0; i < uniquePayload.length; i++) {
             option = document.createElement('option');
-            option.text = uniqueBanana[i].toUpperCase();
-            option.value = uniqueBanana[i];
+              option.text = uniquePayload[i].toUpperCase();
+              option.value = uniquePayload[i];
             dropdownTwo.add(option);
         }
       });
@@ -105,16 +105,8 @@ fetch(url)
   .catch(function(err) {
     console.log('Fetch Error :-S', err);
   });
-console.log(uniqueBanana.UnitsofMeasurement);  // works
+console.log(uniquePayload.UnitsofMeasurement);  // works
 
-
-// function myClick(){
-//     for (var i = 0; i < uniqueBanana.length; i++) {
-//         optionTwo = document.createElement('option');
-//         optionTwo.text = uniqueBanana[i].toUpperCase();
-//         optionTwo.value = uniqueBanana[i];
-//         dropdownTwo.add(optionTwo);
-//     }
 
 
 
